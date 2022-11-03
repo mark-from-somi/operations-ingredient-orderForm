@@ -1,0 +1,39 @@
+{
+  "name": "somi-gas-template",
+  "version": "1.0.0",
+  "description": "Start Template for Developing in Google Apps Scripts",
+  "main": "index.js",
+  "scripts": {
+    "setup": "mkdir -p dist && cd dist && read -p \"Enter a Title for your Project:\n\" titleName && clasp create --title  \"$titleName\" && mv .clasp.json .. && cd ..",
+    "test": "jest",
+    "upload": "clasp push",
+    "build": "find dist/* -type f ! -name '*.json' -delete && cp $(find src -name '*.js' -o -name '*.html') dist",
+    "gpub": "npm run build && npm run upload",
+    "commit-a": "git add . && git status && read -p \"Commit Message-Title: \n\" commitTitle && read -p \"Commit Message-Desc: \n\" commitDesc && git commit -m \"$commitTitle\" -m \"$commitDesc\"",
+    "gdeploy": "npm run gpub && read -p \"Enter a Title for your Version:\n\" titleName && clasp deploy -d \"$titleName\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-from-somi/somi-gas-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mark-from-somi/somi-gas-template/issues"
+  },
+  "homepage": "https://github.com/mark-from-somi/somi-gas-template#readme",
+  "dependencies": {
+    "jest": "^29.0.3"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.55",
+    "eslint": "^8.24.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-googleappsscript": "^1.0.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "prettier": "^2.7.1"
+  }
+}
