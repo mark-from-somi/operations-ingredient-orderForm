@@ -10,7 +10,7 @@
     "build": "find dist/* -type f ! -name '*.json' -delete && cp $(find src -name '*.js' -o -name '*.html') dist",
     "gpub": "npm run build && npm run upload",
     "commit-a": "git add . && git status && read -p \"Commit Message-Title: \n\" commitTitle && read -p \"Commit Message-Desc: \n\" commitDesc && git commit -m \"$commitTitle\" -m \"$commitDesc\"",
-    "gdeploy": "npm run gpub && read -p \"Enter a Title for your Version:\n\" titleName && clasp deploy -i \"AKfycbwYvS2nxnwQ93hCP4XC9YFPOqOMIK_fva3z7uv32AOWcVmzOCvoF3U4RZEkB7Fuv0vx\" -d \"$titleName\""
+    "gdeploy": "npm run gpub && read -p \"Enter a Title for your Version:\n\" titleName && clasp deploy -i \"AKfycbyDovOLy9AdAS3Ym7WVWHhcIXJnkphIW4MDlF1XWSc\" -d \"$titleName\""
   },
   "repository": {
     "type": "git",

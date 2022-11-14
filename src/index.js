@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 function doGet() {
@@ -11,6 +12,7 @@ function doGet() {
 function getList() {
   const sheet = SpreadsheetApp.openById('1af_iLmabrijcMkZhppR8vG_REVOad0HYDUEY4fS5n5c').getSheetByName('main');
   const range = sheet.getRange(`A1:A${sheet.getLastRow}`).getValues()[0];
+  console.log(range);
   return range;
 }
 
